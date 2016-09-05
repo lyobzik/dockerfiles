@@ -14,6 +14,8 @@ RUN tar -xzf /tmp/kafka.tgz -C /opt && rm /tmp/kafka.tgz && \
   ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka
 
 ADD entrypoint.sh /
+ADD kafka-local-consumer.sh /
+ADD kafka-local-producer.sh /
 
 EXPOSE 2181 9092
 WORKDIR /opt/kafka
